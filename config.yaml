@@ -1,0 +1,15 @@
+name: "Westlaw Proxy"
+description: "Puppeteer-based Westlaw Proxy for Home Assistant"
+version: "1.0.0"
+slug: "westlaw_proxy"
+init: false
+arch:
+  - aarch64
+  - amd64
+ports:
+  3000/tcp: 3000
+map:
+  - config:rw
+options: {}
+schema: {}
+startup: application
