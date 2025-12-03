@@ -24,4 +24,7 @@ schema:
     description: "Comma-separated list of allowed origins (optional, defaults to platforms.cc and localhost)"
     required: false
     type: string
+environment:
+  - WESTLAW_API_KEY={westlaw_api_key}
+  - ALLOWED_ORIGINS={allowed_origins}
 startup: application

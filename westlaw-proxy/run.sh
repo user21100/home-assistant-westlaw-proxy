@@ -1,9 +1,8 @@
 #!/usr/bin/with-contenv bashio
 echo "Starting Westlaw Proxy..."
 
-# Get configuration from add-on options
-export WESTLAW_API_KEY=$(bashio::config 'westlaw_api_key')
-export ALLOWED_ORIGINS=$(bashio::config 'allowed_origins')
+# Environment variables are automatically set by Home Assistant from config.yaml
+# WESTLAW_API_KEY and ALLOWED_ORIGINS are available via the environment key in config.yaml
 
 # Start the proxy
 node westlaw-proxy.js
