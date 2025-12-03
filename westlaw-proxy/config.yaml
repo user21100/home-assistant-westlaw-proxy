@@ -1,6 +1,6 @@
 name: "Westlaw Proxy"
-description: "Puppeteer-based Westlaw Proxy for Home Assistant"
-version: "1.0.0"
+description: "Puppeteer-based Westlaw Proxy for Home Assistant with security features"
+version: "1.1.0"
 slug: "westlaw_proxy"
 init: false
 arch:
@@ -10,6 +10,18 @@ ports:
   3000/tcp: 3000
 map:
   - config:rw
-options: {}
-schema: {}
+options:
+  westlaw_api_key: ""
+  allowed_origins: ""
+schema:
+  westlaw_api_key:
+    name: "Westlaw API Key"
+    description: "API key for authenticating requests (required for all endpoints except /health)"
+    required: true
+    type: string
+  allowed_origins:
+    name: "Allowed CORS Origins"
+    description: "Comma-separated list of allowed origins (optional, defaults to platforms.cc and localhost)"
+    required: false
+    type: string
 startup: application
